@@ -56,6 +56,7 @@ class SearchVC: UIViewController {
     
     private func configureBtn() {
         view.addSubview(btnCallToAction)
+        btnCallToAction.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             btnCallToAction.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -69,13 +70,20 @@ class SearchVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
+    
+    @objc func pushFollowerListVC() {
+        let followersVC = FollowerListVC()
+        followersVC.userName = tfUserName.text
+        followersVC.title = tfUserName.text
+        navigationController?.pushViewController(followersVC, animated: true)
+    }
 
 }
 
 extension SearchVC: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        pushFollowerListVC()
         return true
     }
     
