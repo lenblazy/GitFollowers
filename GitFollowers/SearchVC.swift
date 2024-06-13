@@ -44,6 +44,7 @@ class SearchVC: UIViewController {
     
     private func configureTF() {
         view.addSubview(tfUserName)
+        tfUserName.delegate = self
         
         NSLayoutConstraint.activate([
             tfUserName.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
