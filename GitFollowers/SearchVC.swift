@@ -18,6 +18,8 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureLogoImageView()
+        configureTF()
+        configureBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +39,28 @@ class SearchVC: UIViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
         ])
         
+    }
+    
+    private func configureTF() {
+        view.addSubview(tfUserName)
+        
+        NSLayoutConstraint.activate([
+            tfUserName.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
+            tfUserName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            tfUserName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            tfUserName.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    private func configureBtn() {
+        view.addSubview(btnCallToAction)
+        
+        NSLayoutConstraint.activate([
+            btnCallToAction.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            btnCallToAction.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            btnCallToAction.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            btnCallToAction.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
 }
