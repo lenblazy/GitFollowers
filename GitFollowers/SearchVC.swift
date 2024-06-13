@@ -20,6 +20,7 @@ class SearchVC: UIViewController {
         configureLogoImageView()
         configureTF()
         configureBtn()
+        createDismissKeyboardTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,5 +63,19 @@ class SearchVC: UIViewController {
             btnCallToAction.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    private func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
 
+}
+
+extension SearchVC: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        return true
+    }
+    
 }
