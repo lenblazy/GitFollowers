@@ -18,6 +18,8 @@ class GFAlertVC: UIViewController {
     var alertMessage: String?
     var btnTitle: String?
     
+    let padding: CGFloat = 20
+    
     init(alertTitle: String? = nil, alertMessage: String? = nil, btnTitle: String? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = alertTitle
@@ -33,6 +35,8 @@ class GFAlertVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         configureContainerView()
+        configureTitleLabel()
+        configureMessageLabel()
     }
     
     private func configureContainerView(){
@@ -51,6 +55,47 @@ class GFAlertVC: UIViewController {
         ])
     }
    
+    private func configureTitleLabel() {
+        containerView.addSubview(labelTitle)
+        labelTitle.text = alertTitle ?? "Something went wrong"
+        
+        NSLayoutConstraint.activate([
+            labelTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
+            labelTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            labelTitle.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            labelTitle.heightAnchor.constraint(equalToConstant: 28)
+        ])
+    }
     
+    private func configureButton() {
+        containerView.addSubview(btnAction)
+        btnAction.setTitle(btnTitle ?? "OK", for: .normal)
+        btnAction.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            btnAction.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
+            btnAction.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            btnAction.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            btnAction.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    private func configureMessageLabel() {
+        containerView.addSubview(labelMessage)
+        labelMessage.text = alertMessage ?? "Unable to complete request"
+        labelMessage.numberOfLines = 4
+        
+        NSLayoutConstraint.activate([
+            labelMessage.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 8),
+            labelMessage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            labelMessage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            labelMessage.bottomAnchor.constraint(equalTo: btnAction.topAnchor, constant: -8),
+            
+        ])
+    }
 
+    @objc func dismissVC() {
+        dismiss(animated: true)
+    }
+    
 }
