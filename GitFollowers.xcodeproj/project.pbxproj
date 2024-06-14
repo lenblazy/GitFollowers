@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80A549B2C1C7F6100C78A29 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80A549A2C1C7F6100C78A29 /* ErrorMessages.swift */; };
 		B84468C22C1C0AF100967646 /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84468C12C1C0AF100967646 /* UIViewController+ext.swift */; };
 		B84468C92C1C12D100967646 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84468C82C1C12D100967646 /* Follower.swift */; };
 		B84468CB2C1C132700967646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84468CA2C1C132700967646 /* User.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80A549A2C1C7F6100C78A29 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		B84468C12C1C0AF100967646 /* UIViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
 		B84468C82C1C12D100967646 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		B84468CA2C1C132700967646 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80A54992C1C7F2F00C78A29 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B80A549A2C1C7F6100C78A29 /* ErrorMessages.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B84468C32C1C109600967646 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,13 +187,14 @@
 		B875314D2B778088000B2033 /* GitFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				B80A54992C1C7F2F00C78A29 /* Utilities */,
 				B84468CC2C1C179E00967646 /* Managers */,
-				B875315C2B778089000B2033 /* Info.plist */,
 				B84468C72C1C12B400967646 /* Model */,
 				B84468C32C1C109600967646 /* Screens */,
 				B84468C42C1C10B200967646 /* Custom Views */,
 				B84468C52C1C10C500967646 /* Extensions */,
 				B84468C62C1C10F200967646 /* Support */,
+				B875315C2B778089000B2033 /* Info.plist */,
 			);
 			path = GitFollowers;
 			sourceTree = "<group>";
@@ -343,6 +354,7 @@
 				B87531812B77870F000B2033 /* FavoritesListVC.swift in Sources */,
 				B84ADAD32C1ADFED0077648C /* GFAlertVC.swift in Sources */,
 				B84ADAD12C1ADF540077648C /* GFBodyLabel.swift in Sources */,
+				B80A549B2C1C7F6100C78A29 /* ErrorMessages.swift in Sources */,
 				B84468C92C1C12D100967646 /* Follower.swift in Sources */,
 				B84ADACF2C1ADDD50077648C /* GFTitleLabel.swift in Sources */,
 				B84468CE2C1C17AE00967646 /* NetworkManager.swift in Sources */,
