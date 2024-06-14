@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B84468C22C1C0AF100967646 /* UIViewController+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84468C12C1C0AF100967646 /* UIViewController+ext.swift */; };
 		B84ADAC92C1ACA460077648C /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84ADAC82C1ACA460077648C /* GFButton.swift */; };
 		B84ADACB2C1ACD550077648C /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84ADACA2C1ACD550077648C /* GFTextField.swift */; };
 		B84ADACD2C1AD7B30077648C /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84ADACC2C1AD7B30077648C /* FollowerListVC.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B84468C12C1C0AF100967646 /* UIViewController+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ext.swift"; sourceTree = "<group>"; };
 		B84ADAC82C1ACA460077648C /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		B84ADACA2C1ACD550077648C /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		B84ADACC2C1AD7B30077648C /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				B84ADACE2C1ADDD50077648C /* GFTitleLabel.swift */,
 				B84ADAD02C1ADF540077648C /* GFBodyLabel.swift */,
 				B84ADAD22C1ADFED0077648C /* GFAlertVC.swift */,
+				B84468C12C1C0AF100967646 /* UIViewController+ext.swift */,
 			);
 			path = GitFollowers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B84ADACB2C1ACD550077648C /* GFTextField.swift in Sources */,
+				B84468C22C1C0AF100967646 /* UIViewController+ext.swift in Sources */,
 				B875317F2B7786EC000B2033 /* SearchVC.swift in Sources */,
 				B84ADAC92C1ACA460077648C /* GFButton.swift in Sources */,
 				B87531812B77870F000B2033 /* FavoritesListVC.swift in Sources */,
