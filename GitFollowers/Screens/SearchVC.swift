@@ -28,13 +28,14 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tfUserName.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = GFImages.ghLogo
         
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
@@ -70,7 +71,7 @@ class SearchVC: UIViewController {
     }
     
     private func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
@@ -80,9 +81,10 @@ class SearchVC: UIViewController {
             return
             
         }
-        let followersVC = FollowerListVC()
-        followersVC.userName = tfUserName.text
-        followersVC.title = tfUserName.text
+        
+        tfUserName.resignFirstResponder()
+        
+        let followersVC = FollowerListVC(username: tfUserName.text!)
         navigationController?.pushViewController(followersVC, animated: true)
     }
 
