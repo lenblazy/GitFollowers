@@ -13,13 +13,18 @@ fileprivate var containerView: UIView!
 extension UIViewController{
     
     func presentGFAlert(title: String, message: String, buttonText: String){
-        let alertVC = GFAlertVC(alertTitle: title, alertMessage: message, btnTitle: buttonText)
-        alertVC.modalPresentationStyle   = .overFullScreen
-        alertVC.modalTransitionStyle     = .crossDissolve
-        self.present(alertVC, animated: true)
+        DispatchQueue.main.async {
+            
+            let alertVC = GFAlertVC(alertTitle: title, alertMessage: message, btnTitle: buttonText)
+            alertVC.modalPresentationStyle   = .overFullScreen
+            alertVC.modalTransitionStyle     = .crossDissolve
+            self.present(alertVC, animated: true)
+        }
+        
     }
     
     func showLoadingView() {
+        
         containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
         
